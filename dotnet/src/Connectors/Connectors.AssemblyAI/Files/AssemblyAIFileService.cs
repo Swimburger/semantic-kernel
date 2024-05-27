@@ -46,6 +46,9 @@ public sealed class AssemblyAIFileService
     /// <param name="stream">The file stream</param>
     /// <param name="cancellationToken">The <see cref="CancellationToken"/> to monitor for cancellation requests. The default is <see cref="CancellationToken.None"/>.</param>
     /// <returns>The file metadata.</returns>
+    /// <remarks>
+    /// Caller responsible for disposal of the stream.
+    /// </remarks>
     public async Task<AudioContent> UploadAsync(Stream stream, CancellationToken cancellationToken = default)
     {
         Verify.NotNull(stream);
